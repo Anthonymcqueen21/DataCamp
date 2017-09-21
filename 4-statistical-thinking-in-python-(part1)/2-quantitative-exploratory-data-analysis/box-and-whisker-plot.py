@@ -31,7 +31,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('iris.csv')
+df = pd.read_csv('../_datasets/iris.csv')
 
 # Create box plot with Seaborn's default settings
 _ = sns.boxplot(x='species', y='petal length (cm)', data=df)

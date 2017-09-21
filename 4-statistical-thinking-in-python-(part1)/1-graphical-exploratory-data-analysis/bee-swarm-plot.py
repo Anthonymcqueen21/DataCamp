@@ -29,7 +29,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-df = pd.read_csv('iris.csv')
+df = pd.read_csv('../_datasets/iris.csv')
 
 # Create bee swarm plot with Seaborn's default settings
 sns.swarmplot(x='species', y='petal length (cm)', data=df)

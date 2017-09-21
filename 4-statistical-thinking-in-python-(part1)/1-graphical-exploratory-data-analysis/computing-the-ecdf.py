@@ -27,6 +27,8 @@ Instructions
         inclusive. Therefore, np.arange() will need to go from 1 to n+1. Be sure to divide this by n.
     -The function returns the values x and y.
 '''
+import numpy as np
+
 def ecdf(data):
     """Compute ECDF for a one-dimensional array of measurements."""
 
@@ -34,9 +36,9 @@ def ecdf(data):
     n = len(data)
 
     # x-data for the ECDF: x
-    x = np.sort(data['data'])
+    x = np.sort(data)
 
     # y-data for the ECDF: y
-    y = np.arrange(1, n+1) / n
+    y = np.arange(1, n+1) / n
 
     return x, y

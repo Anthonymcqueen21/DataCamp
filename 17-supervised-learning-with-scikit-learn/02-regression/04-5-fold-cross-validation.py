@@ -17,17 +17,18 @@ Create a linear regression regressor called reg.
 Use the cross_val_score() function to perform 5-fold cross-validation on X and y.
 Compute and print the average cross-validation score. You can use NumPy's mean() function to compute the average.
 '''
-# Import the necessary modules
-from sklearn.linear_model import LinearRegression
+# Import necessary modules
 from sklearn.model_selection import cross_val_score
+from sklearn.metrics import roc_auc_score
 
-# Create a linear regression object: reg
-reg = LinearRegression()
+# Compute predicted probabilities: y_pred_prob
+y_pred_prob = logreg.predict_proba(X_test)[:,1]
 
-# Compute 5-fold cross-validation scores: cv_scores
-cv_scores = cross_val_score(reg, X, y, cv=5)
+# Compute and print AUC score
+print("AUC: {}".format(roc_auc_score(y_test, y_pred_prob)))
 
-# Print the 5-fold cross-validation scores
-print(cv_scores)
+# Compute cross-validated AUC scores: cv_auc
+cv_auc = cross_val_score(logreg, X, y, cv=5, scoring='roc_auc')
 
-print("Average 5-Fold CV Score: {}".format(np.mean(cv_scores)))
+# Print list of AUC scores
+print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))

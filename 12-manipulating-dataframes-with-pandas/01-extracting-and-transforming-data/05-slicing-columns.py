@@ -13,7 +13,7 @@ Slice the columns from 'Romney' to the end and assign the result to right_column
 The code to print the first 5 rows of left_columns, middle_columns, and right_columns has been written, so hit 'Submit Answer' to see the results!
 '''
 # Slice the columns from the starting column to 'Obama': left_columns
-left_columns = election.loc[:,'state':'Obama']
+left_columns = election.loc[:,:'Obama']
 
 # Print the output of left_columns.head()
 print(left_columns.head())
